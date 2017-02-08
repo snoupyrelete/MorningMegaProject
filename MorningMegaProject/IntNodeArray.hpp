@@ -9,7 +9,7 @@
 #ifndef IntNodeArray_hpp
 #define IntNodeArray_hpp
 
-#include "IntNode.cpp"
+#include "IntNode.hpp"
 
 class IntNodeArray
 {
