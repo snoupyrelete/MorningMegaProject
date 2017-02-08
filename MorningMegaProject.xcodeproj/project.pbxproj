@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D1E3CEB1E4B699100E41769 /* IntNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E3CE91E4B699100E41769 /* IntNode.cpp */; };
+		2D1E3CEE1E4B724B00E41769 /* IntNodeArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,8 @@
 		2D1E3CDF1E4B697F00E41769 /* MorningMegaProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MorningMegaProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D1E3CE91E4B699100E41769 /* IntNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntNode.cpp; sourceTree = "<group>"; };
 		2D1E3CEA1E4B699100E41769 /* IntNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IntNode.hpp; sourceTree = "<group>"; };
+		2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntNodeArray.cpp; sourceTree = "<group>"; };
+		2D1E3CED1E4B724B00E41769 /* IntNodeArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IntNodeArray.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +61,10 @@
 		2D1E3CE11E4B697F00E41769 /* MorningMegaProject */ = {
 			isa = PBXGroup;
 			children = (
-				2D1E3CE91E4B699100E41769 /* IntNode.cpp */,
 				2D1E3CEA1E4B699100E41769 /* IntNode.hpp */,
+				2D1E3CED1E4B724B00E41769 /* IntNodeArray.hpp */,
+				2D1E3CE91E4B699100E41769 /* IntNode.cpp */,
+				2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */,
 			);
 			path = MorningMegaProject;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1E3CEB1E4B699100E41769 /* IntNode.cpp in Sources */,
+				2D1E3CEE1E4B724B00E41769 /* IntNodeArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
