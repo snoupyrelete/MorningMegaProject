@@ -34,6 +34,8 @@
 		2D1E3CEF1E4B7D2600E41769 /* Runner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Runner.cpp; sourceTree = "<group>"; };
 		2D1E3CF21E4B7D9800E41769 /* StructureController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StructureController.cpp; sourceTree = "<group>"; };
 		2D1E3CF31E4B7D9800E41769 /* StructureController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StructureController.hpp; sourceTree = "<group>"; };
+		2DDE3ACF1E54A190002B7B00 /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
+		2DDE3AD21E54AAC9002B7B00 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,8 @@
 				2D1E3CED1E4B724B00E41769 /* IntNodeArray.hpp */,
 				2D1E3CE91E4B699100E41769 /* IntNode.cpp */,
 				2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */,
+				2DDE3ACF1E54A190002B7B00 /* Node.hpp */,
+				2DDE3AD21E54AAC9002B7B00 /* Array.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -280,6 +284,7 @@
 				2D1E3CE81E4B697F00E41769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

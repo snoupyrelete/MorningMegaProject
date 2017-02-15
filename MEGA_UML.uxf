@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>SampleClass
+--
+Data Members
+--
+Methods &amp; Constructors
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>130</y>
+      <w>340</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Timer
+--
+- executionTime : clock_t
+--
++ startTimer : void
++ stopTimer : void
++ resetTimer : void
++ displayTimerInformation : void
++ getExecutionTimeInMicroseconds : long
++ Timer() : constructor</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
