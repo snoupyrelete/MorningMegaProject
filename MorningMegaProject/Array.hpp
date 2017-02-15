@@ -11,6 +11,7 @@
 #include <assert.h>
 #include "Node.hpp"
 
+
 template <class Type>
 class Array
 {
@@ -18,11 +19,19 @@ private:
     Node<Type> * front;
     int size;
 public:
+    Array<Type>();
     Array<Type>(int size);
     int getSize();
     Type getFromIndex(int index);
     void setAtIndex(int index, Type value);
 };
+
+template <class Type>
+Array<Type> :: Array()
+{
+    // Do not use!
+    // Implemented only for compilation
+}
 
 /*
  Creates an Array of specified size by linking Node<Type> together.
@@ -30,7 +39,7 @@ public:
 template <class Type>
 Array<Type> :: Array(int size)
 {
-    assert(size >= 0);
+    assert(size > 0);
     this->size = size;
 
     this->front = new Node<Type>();

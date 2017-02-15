@@ -11,6 +11,7 @@
 
 #include "Array.hpp"
 #include "Node.hpp"
+
 #include <string>
 
 class StructureController

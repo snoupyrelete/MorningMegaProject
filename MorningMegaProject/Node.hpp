@@ -18,12 +18,12 @@ private:
 public:
     Node<Type>();
     Node<Type>(Type data);
-    Node<Type>(Type data, Node<Type> * nextPointer)
+    Node<Type>(Type data, Node<Type> * nextPointer);
     
     Type getNodeData();
     Node<Type> * getNodePointer();
     void setNodeData(Type value);
-    void setNodePointer(Mpde<Type> * nextPointer)
+    void setNodePointer(Node<Type> * nextPointer);
     
 };
 

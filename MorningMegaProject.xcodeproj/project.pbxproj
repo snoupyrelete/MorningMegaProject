@@ -90,16 +90,24 @@
 		2D1E3CF61E4B7DB000E41769 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2D1E3CEA1E4B699100E41769 /* IntNode.hpp */,
-				2D1E3CED1E4B724B00E41769 /* IntNodeArray.hpp */,
-				2D1E3CE91E4B699100E41769 /* IntNode.cpp */,
-				2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */,
+				2DDE3AD71E54B2BB002B7B00 /* Typed Sample */,
 				2DDE3ACF1E54A190002B7B00 /* Node.hpp */,
 				2DDE3AD21E54AAC9002B7B00 /* Array.hpp */,
 				2DDE3AD51E54B235002B7B00 /* Timer.hpp */,
 				2DDE3AD41E54B235002B7B00 /* Timer.cpp */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		2DDE3AD71E54B2BB002B7B00 /* Typed Sample */ = {
+			isa = PBXGroup;
+			children = (
+				2D1E3CEA1E4B699100E41769 /* IntNode.hpp */,
+				2D1E3CED1E4B724B00E41769 /* IntNodeArray.hpp */,
+				2D1E3CE91E4B699100E41769 /* IntNode.cpp */,
+				2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */,
+			);
+			name = "Typed Sample";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

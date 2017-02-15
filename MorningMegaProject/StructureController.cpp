@@ -8,15 +8,41 @@
 
 #include "IntNodeArray.hpp"
 #include "StructureController.hpp"
+#include "Timer.hpp"
 #include <iostream>
 
 using namespace std;
 
 StructureController :: StructureController()
 {
-    cout << "Going to test the IntNodeArray" << endl;
-    testIntArray();
-    cout << "Finished IntNodeArray Testing\n" << endl;
+    wordNode = Node<string>();
+    numberNode = Node<int>();
+    numberArray = Array<int>(1);
+}
+
+void StructureController :: testArrayTemplate()
+{
+    cout << "Array Template" << endl;
+    Timer arrayTimer;
+    
+    arrayTimer.startTimer();
+    int test [9];
+    arrayTimer.stopTimer();
+    arrayTimer.displayTimerInformation();
+    arrayTimer.resetTimer();
+    
+    arrayTimer.startTimer();
+    numberArray = Array<int>(9);
+    arrayTimer.stopTimer();
+    arrayTimer.displayTimerInformation();
+    arrayTimer.resetTimer();
+    
+    cout << "Finished template testing." << endl;
+}
+
+void StructureController :: testNodeTypes()
+{
+    
 }
 
 void StructureController :: testIntArray()
@@ -33,6 +59,6 @@ void StructureController :: testIntArray()
 
 void StructureController :: start()
 {
-    
+    testArrayTemplate();
 }
 
