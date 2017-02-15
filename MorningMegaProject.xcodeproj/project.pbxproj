@@ -11,6 +11,7 @@
 		2D1E3CEE1E4B724B00E41769 /* IntNodeArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */; };
 		2D1E3CF11E4B7D2600E41769 /* Runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E3CEF1E4B7D2600E41769 /* Runner.cpp */; };
 		2D1E3CF41E4B7D9800E41769 /* StructureController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E3CF21E4B7D9800E41769 /* StructureController.cpp */; };
+		2DDE3AD61E54B235002B7B00 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DDE3AD41E54B235002B7B00 /* Timer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 		2D1E3CF31E4B7D9800E41769 /* StructureController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StructureController.hpp; sourceTree = "<group>"; };
 		2DDE3ACF1E54A190002B7B00 /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		2DDE3AD21E54AAC9002B7B00 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
+		2DDE3AD41E54B235002B7B00 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		2DDE3AD51E54B235002B7B00 /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				2D1E3CEC1E4B724B00E41769 /* IntNodeArray.cpp */,
 				2DDE3ACF1E54A190002B7B00 /* Node.hpp */,
 				2DDE3AD21E54AAC9002B7B00 /* Array.hpp */,
+				2DDE3AD51E54B235002B7B00 /* Timer.hpp */,
+				2DDE3AD41E54B235002B7B00 /* Timer.cpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				2D1E3CF11E4B7D2600E41769 /* Runner.cpp in Sources */,
 				2D1E3CF41E4B7D9800E41769 /* StructureController.cpp in Sources */,
 				2D1E3CEB1E4B699100E41769 /* IntNode.cpp in Sources */,
+				2DDE3AD61E54B235002B7B00 /* Timer.cpp in Sources */,
 				2D1E3CEE1E4B724B00E41769 /* IntNodeArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
