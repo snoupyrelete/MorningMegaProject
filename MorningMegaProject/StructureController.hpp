@@ -21,9 +21,12 @@ private:
     Node<std::string> wordNode;
     Array<int> numberArray;
     
+    
+    
     void testIntArray();
     void testNodeTypes();
     void testArrayTemplate();
+    void testAdvancedFeatures();
 public:
     StructureController();
     void start();

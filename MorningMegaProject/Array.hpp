@@ -87,7 +87,7 @@ Type Array<Type> :: getFromIndex(int index)
     assert(index >= 0 && index < size);
     Type value;
     
-    Node<Type> current = front;
+    Node<Type> * current = front;
     
     for(int position = 0; position < index; position++)
     {
@@ -95,6 +95,7 @@ Type Array<Type> :: getFromIndex(int index)
     }
     
     value = current->getNodeData();
+    return value;
 }
 
 /*
@@ -133,15 +134,15 @@ Array<Type> :: ~Array()
     {
         // Move to next node in array
         front = front->getNodePointer();
-        cout << "Moving to the next node at: " << count << endl;
+        //cout << "Moving to the next node at: " << count << endl;
         // Delete the front pointer
         delete remove;
-        cout << "Deleting the old front pointer." << endl;
+        //cout << "Deleting the old front pointer." << endl;
         // Move delete to the new front.
         remove = front;
-        cout << "Moving to new front pointer." << endl;
+        //cout << "Moving to new front pointer." << endl;
         count--;
-        cout << "Front is at: " << front << " count is: " << count << endl;
+        //cout << "Front is at: " << front << " count is: " << count << endl;
     }
 }
 
