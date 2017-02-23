@@ -93,6 +93,35 @@ void List<Type> :: addAtIndex(int index, Type value)
     }
 }
 
+template <class Type>
+Type Array<Type> :: getFromIndex(int index)
+{
+    assert(index >= 0 && index < size);
+    Type value;
+    
+    Node<Type> * current = front;
+    
+    for(int position = 0; position < index; position++)
+    {
+        current = current->getNodePointer();
+    }
+    
+    value = current->getNodeData();
+    return value;
+}
+
+//template <class Type>
+//Type Array<Type> :: setAtIndex(int index, Type value)
+//{
+//    assert(index >= 0 && index < size);
+//    Node<Type> * current = front;
+//    for(int position = 0; position < index; position++)
+//    {
+//        current = current->getNodePointer();
+//    }
+//    
+//    current->setNodeData(value);
+//}
 
 template <class Type>
 void List<Type> :: addFront(Type value)
@@ -139,6 +168,56 @@ void List<Type> :: addEnd(Type value)
         this->end = added;
     }
     size++;
+}
+
+template <class Type>
+Type List<Type> :: remove(int index)
+{
+    assert(index >= 0 && index < size)
+    Type removed;
+    
+    Node<Type> * current = front;
+    Node<Type> * previous = nullptr;
+    Node<Type> * toBeRemoved = nullptr;
+    
+    if (index == 0)
+    {
+        toBeRemoved = front;
+        front = front->getNodePointer();
+        
+    }
+    else if(index == size -1)
+    {
+        for(int spot = 0; spot < index; spot++)
+        {
+            previous = current;
+            current = current->getNodePointer();
+        }
+        
+        toBeRemoved = current;
+        previous->setNodePointer(nullptr);
+        end = previous;
+
+    }
+    else
+    {
+        for(int spot = 0; spot < index; spot++)
+        {
+            previous = current;
+            current = current->getNodePointer();
+        }
+        
+        toBeRemoved = current;
+        current = toBeRemoved->getNodePointer();
+        previous->setNodePointer(current);
+    }
+    
+    removed = toBeRemoved->getNodeData();
+    
+    delete toBeRemoved;
+    
+    size--;
+    return removed;
 }
 
 
