@@ -60,6 +60,39 @@ List<Type> :: List()
     this->end = nullptr;
 }
 
+template<class Type>
+void List<Type> :: addAtIndex(int index, Type value)
+{
+    assert(index >= 0 && index <= size);
+    if (index == size)
+    {
+        addEnd(value);
+    }
+    else if (index == 0)
+    {
+        addFront(value);
+    }
+    else
+    {
+        Node<Type> * insertedNode = new Node<Type>(value);
+        Node<Type> * current = front;
+        Node<Type> * previous = nullptr;
+        
+        for (int position = 0; position < index; position++)
+        {
+            // Keep track of previous to link previous to current and then current to next
+            previous = current;
+            // Gets the pointer to the node next of current.
+            current = current->getNodePointer();
+        }
+        
+        previous->setNodePointer(insertedNode);
+        insertedNode->setNodePointer(current)l
+        
+        size++;
+    }
+}
+
 
 template <class Type>
 void List<Type> :: addFront(Type value)
@@ -75,22 +108,37 @@ void List<Type> :: addFront(Type value)
     {
         Node<Type> * newFirst = new Node(value)
         newFirst->setNodeData(value);
+        
         // Set the new Node to point to the previously first Node
         newFirst->setNodePointer(front);
         
+        // Could use this instead?...
         // Node<Type> * newFirst = new Node<Type>(value, front);
         
         // Point the front to the new front.
-        front = newFirst;
+        this->front = newFirst;
     }
     
     size++;
 }
 
 template <class Type>
-void List<Type> :: addFront(Type value)
+void List<Type> :: addEnd(Type value)
 {
-    
+    Node<Type> * added = new Node<Type>(data);
+    if (size == 0)
+    {
+        this->front = added;
+        this->end = added;
+    }
+    else
+    {
+        // Set the end to point to the next node
+        end->setNodePointer(added);
+        // Set the end pointer to point at the new end
+        this->end = added;
+    }
+    size++;
 }
 
 
