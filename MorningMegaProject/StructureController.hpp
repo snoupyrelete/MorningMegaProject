@@ -11,6 +11,7 @@
 
 #include "Array.hpp"
 #include "Node.hpp"
+#include "List.hpp"
 
 #include <string>
 
@@ -27,6 +28,7 @@ private:
     void testNodeTypes();
     void testArrayTemplate();
     void testAdvancedFeatures();
+    void testListIntro();
 public:
     StructureController();
     void start();

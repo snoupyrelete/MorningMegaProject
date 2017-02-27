@@ -60,6 +60,24 @@ List<Type> :: List()
     this->end = nullptr;
 }
 
+template <class Type>
+List<Type> :: ~List()
+{
+    Node<Type> * destruction = front;
+    while (front != nullptr)
+    {
+        front = front->getNodePointer();
+        delete destruction;
+        destruction = front;
+    }
+}
+
+template <class Type>
+int List<Type> :: getSize() const
+{
+    return this->size;
+}
+
 template<class Type>
 void List<Type> :: addAtIndex(int index, Type value)
 {
@@ -87,14 +105,14 @@ void List<Type> :: addAtIndex(int index, Type value)
         }
         
         previous->setNodePointer(insertedNode);
-        insertedNode->setNodePointer(current)l
+        insertedNode->setNodePointer(current);
         
         size++;
     }
 }
 
 template <class Type>
-Type Array<Type> :: getFromIndex(int index)
+Type List<Type> :: getFromIndex(int index)
 {
     assert(index >= 0 && index < size);
     Type value;
@@ -110,18 +128,21 @@ Type Array<Type> :: getFromIndex(int index)
     return value;
 }
 
-//template <class Type>
-//Type Array<Type> :: setAtIndex(int index, Type value)
-//{
-//    assert(index >= 0 && index < size);
-//    Node<Type> * current = front;
-//    for(int position = 0; position < index; position++)
-//    {
-//        current = current->getNodePointer();
-//    }
-//    
-//    current->setNodeData(value);
-//}
+template <class Type>
+Type List<Type> :: setAtIndex(int index, Type value)
+{
+    assert(index >= 0 && index < size);
+    Type removedData;
+    Node<Type> * current = front;
+    for(int position = 0; position < index; position++)
+    {
+        current = current->getNodePointer();
+    }
+    
+    current->setNodeData(value);
+    
+    return removedData;
+}
 
 template <class Type>
 void List<Type> :: addFront(Type value)
@@ -129,13 +150,13 @@ void List<Type> :: addFront(Type value)
     if (size == 0)
     {
         // DEFAULT CASE - have to set the single node to both front & end pointers.
-        Node<Type> * first = new Node(value)
+        Node<Type> * first = new Node<Type>(value);
         this->front = first;
         this->end = first;
     }
     else
     {
-        Node<Type> * newFirst = new Node(value)
+        Node<Type> * newFirst = new Node<Type>(value);
         newFirst->setNodeData(value);
         
         // Set the new Node to point to the previously first Node
@@ -154,7 +175,7 @@ void List<Type> :: addFront(Type value)
 template <class Type>
 void List<Type> :: addEnd(Type value)
 {
-    Node<Type> * added = new Node<Type>(data);
+    Node<Type> * added = new Node<Type>(value);
     if (size == 0)
     {
         this->front = added;
@@ -173,7 +194,7 @@ void List<Type> :: addEnd(Type value)
 template <class Type>
 Type List<Type> :: remove(int index)
 {
-    assert(index >= 0 && index < size)
+    assert(index >= 0 && index < size);
     Type removed;
     
     Node<Type> * current = front;

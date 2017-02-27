@@ -26,7 +26,7 @@ void StructureController :: testArrayTemplate()
     Timer arrayTimer;
     
     arrayTimer.startTimer();
-    int test [9];
+    //int test [9];
     arrayTimer.stopTimer();
     arrayTimer.displayTimerInformation();
     arrayTimer.resetTimer();
@@ -60,7 +60,8 @@ void StructureController :: testIntArray()
 void StructureController :: start()
 {
     //testArrayTemplate();
-    testAdvancedFeatures();
+    //testAdvancedFeatures();
+    testListIntro();
 }
 
 void StructureController :: testAdvancedFeatures()
@@ -85,5 +86,26 @@ void StructureController :: testAdvancedFeatures()
     copiedWords.setAtIndex(3, "Changed the contents of the copied Array");
     
     
+}
+
+void StructureController :: testListIntro()
+{
+    List<int> sample;
+    sample.addFront(2);
+    sample.addEnd(3);
+    sample.addFront(1);
+    cout << "This should go 1, 2, 3" << endl;
+    
+    for(int index = 0; index < sample.getSize(); index++)
+    {
+        cout << "Size should read 3: " << sample.getSize() << endl;
+    }
+    
+    sample.setAtIndex(0, 3);
+    
+    cout << "This should be 3 @ index 0: " << sample.getFromIndex(0) <<endl;
+    
+    sample.remove(1);
+    cout << "This should be 3 @ index 1: " << sample.getFromIndex(1) << endl;
 }
 
