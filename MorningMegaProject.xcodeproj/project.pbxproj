@@ -41,6 +41,7 @@
 		2DDE3AD21E54AAC9002B7B00 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
 		2DDE3AD41E54B235002B7B00 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		2DDE3AD51E54B235002B7B00 /* Timer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
+		2DF3F37D1E648CF100ECB6B0 /* BiDirectionalNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BiDirectionalNode.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				2DDE3AD51E54B235002B7B00 /* Timer.hpp */,
 				2DDE3AD41E54B235002B7B00 /* Timer.cpp */,
 				2D2D5AA41E5CA39000F0A639 /* List.hpp */,
+				2DF3F37D1E648CF100ECB6B0 /* BiDirectionalNode.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
