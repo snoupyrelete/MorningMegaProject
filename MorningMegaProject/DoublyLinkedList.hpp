@@ -36,4 +36,22 @@ DoublyLinkedList<Type> :: DoublyLinkedList()
     this->front = nullptr;
     this->end = nullptr;
 }
+
+template <class Type>
+int DoublyLinkedList<Type> :: getSize()
+{
+    return this->size;
+}
+
+template <class Type>
+BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getFront()
+{
+    return this->front;
+}
+
+template <class Type>
+BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getEnd()
+{
+    return this->end;
+}
 #endif /* DoublyLinkedList_hpp */
