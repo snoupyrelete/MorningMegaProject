@@ -66,7 +66,7 @@ List<Type> :: ~List()
     Node<Type> * destruction = front;
     while (front != nullptr)
     {
-        front = front->getNodePointer();
+        front = front->getNextPointer();
         delete destruction;
         destruction = front;
     }
@@ -101,11 +101,11 @@ void List<Type> :: addAtIndex(int index, Type value)
             // Keep track of previous to link previous to current and then current to next
             previous = current;
             // Gets the pointer to the node next of current.
-            current = current->getNodePointer();
+            current = current->getNextPointer();
         }
         
-        previous->setNodePointer(insertedNode);
-        insertedNode->setNodePointer(current);
+        previous->setNextPointer(insertedNode);
+        insertedNode->setNextPointer(current);
         
         size++;
     }
@@ -121,7 +121,7 @@ Type List<Type> :: getFromIndex(int index)
     
     for(int position = 0; position < index; position++)
     {
-        current = current->getNodePointer();
+        current = current->getNextPointer();
     }
     
     value = current->getNodeData();
@@ -136,7 +136,7 @@ Type List<Type> :: setAtIndex(int index, Type value)
     Node<Type> * current = front;
     for(int position = 0; position < index; position++)
     {
-        current = current->getNodePointer();
+        current = current->getNextPointer();
     }
     
     current->setNodeData(value);
@@ -160,7 +160,7 @@ void List<Type> :: addFront(Type value)
         newFirst->setNodeData(value);
         
         // Set the new Node to point to the previously first Node
-        newFirst->setNodePointer(front);
+        newFirst->setNextPointer(front);
         
         // Could use this instead?...
         // Node<Type> * newFirst = new Node<Type>(value, front);
@@ -184,7 +184,7 @@ void List<Type> :: addEnd(Type value)
     else
     {
         // Set the end to point to the next node
-        end->setNodePointer(added);
+        end->setNextPointer(added);
         // Set the end pointer to point at the new end
         this->end = added;
     }
@@ -204,7 +204,7 @@ Type List<Type> :: remove(int index)
     if (index == 0)
     {
         toBeRemoved = front;
-        front = front->getNodePointer();
+        front = front->getNextPointer();
         
     }
     else if(index == size -1)
@@ -212,11 +212,11 @@ Type List<Type> :: remove(int index)
         for(int spot = 0; spot < index; spot++)
         {
             previous = current;
-            current = current->getNodePointer();
+            current = current->getNextPointer();
         }
         
         toBeRemoved = current;
-        previous->setNodePointer(nullptr);
+        previous->setNextPointer(nullptr);
         end = previous;
 
     }
@@ -225,12 +225,12 @@ Type List<Type> :: remove(int index)
         for(int spot = 0; spot < index; spot++)
         {
             previous = current;
-            current = current->getNodePointer();
+            current = current->getNextPointer();
         }
         
         toBeRemoved = current;
-        current = toBeRemoved->getNodePointer();
-        previous->setNodePointer(current);
+        current = toBeRemoved->getNextPointer();
+        previous->setNextPointer(current);
     }
     
     removed = toBeRemoved->getNodeData();
