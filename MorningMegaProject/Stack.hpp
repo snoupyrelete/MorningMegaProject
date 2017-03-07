@@ -26,6 +26,12 @@ public:
 };
 
 template <class Type>
+Stack<Type> :: Stack() : DoublyLinkedList<Type>()
+{
+    
+}
+
+template <class Type>
 Stack<Type> :: ~Stack()
 {
     BiDirectionalNode<Type> * remove = this->getFront();
@@ -37,7 +43,6 @@ Stack<Type> :: ~Stack()
     }
 }
 
-
 /*
 Add method only adds to the end on a stack. Never at an index 
 */
@@ -48,11 +53,10 @@ void Stack<Type> :: add(Type valueToAdd)
 }
 
 /*
- Adds the supplied object to the stack to the end.
- Set new object to point to end.
- 
- Adjusts the end pointer to reflect the new end of the stack.
- Increases the size by 1.
+ 1. Creates a new node
+ 2. If the stack is empty sets front to new node
+ 3. Else sets the end's next to point to the new node and the new nodes previous to end
+ 4. Move end to the new node.
  */
 template <class Type>
 void Stack<Type> :: push(Type addedThing)
@@ -71,4 +75,36 @@ void Stack<Type> :: push(Type addedThing)
     this->setEnd(addToStack);
     this->setSize(this->getSize() + 1);
 }
+
+/*
+ Implemented to avoid abstract status
+ */
+template <class Type>
+Type Stack<Type> :: remove(int index)
+{
+    assert(index == this->getSize(0 -1 && this->getSize() > 0);
+    return pop;
+}
 #endif /* Stack_hpp */
+
+template <class Type>
+Type Stack<Type> :: pop()
+{
+    assert(this->getSize() > 0);
+    Type removed = this->getEnd->getNodeData();
+    
+    BiDirectionalNode<Type> * update = this->getEnd();
+    update = update->getPreviousPointer();
+    
+    if (update != nullptr)
+    {
+        update->setNextPointer(nullptr);
+    }
+    
+    delete this->getEnd();
+    
+    this->setEnd(update);
+    this->setSize(this->getSize() - 1);
+    
+    return removed;
+}
