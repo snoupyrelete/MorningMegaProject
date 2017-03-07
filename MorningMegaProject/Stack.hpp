@@ -25,6 +25,19 @@ public:
     void push(Type data);
 };
 
+template <class Type>
+Stack<Type> :: ~Stack()
+{
+    BiDirectionalNode<Type> * remove = this->getFront();
+    while(this->getFront() != nullptr)
+    {
+        this->setFront(this->getFront()->getNextPointer());
+        delete remove;
+        remove = this->getFront();
+    }
+}
+
+
 /*
 Add method only adds to the end on a stack. Never at an index 
 */
