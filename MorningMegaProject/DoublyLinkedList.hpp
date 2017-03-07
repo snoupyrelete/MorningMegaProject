@@ -2,12 +2,12 @@
 //  DoublyLinkedList.hpp
 //  MorningMegaProject
 //
-//  Created by Robson, Dylan on 3/1/17.
+//  Created by Cody Henrichsen on 3/1/17.
 //  Copyright © 2017 CTEC. All rights reserved.
 //
 
-#ifndef DoublyLinkedList_hpp
-#define DoublyLinkedList_hpp
+#ifndef DoublyLinkedList_h
+#define DoublyLinkedList_h
 
 #include "BiDirectionalNode.hpp"
 
@@ -22,12 +22,17 @@ public:
     virtual void add(Type value) = 0;
     virtual Type remove(int index) = 0;
     DoublyLinkedList();
-    virtual ~DoublyLinkedList() = 0;
+    virtual ~DoublyLinkedList();
     
     int getSize() const;
     BiDirectionalNode<Type> * getFront() const;
     BiDirectionalNode<Type> * getEnd() const;
+    
+    void setFront(BiDirectionalNode<Type> * front);
+    void setSize(int updated);
+    void setEnd(BiDirectionalNode<Type> * end);
 };
+
 
 template <class Type>
 DoublyLinkedList<Type> :: DoublyLinkedList()
@@ -38,20 +43,47 @@ DoublyLinkedList<Type> :: DoublyLinkedList()
 }
 
 template <class Type>
-int DoublyLinkedList<Type> :: getSize()
+DoublyLinkedList<Type> :: ~DoublyLinkedList()
+{
+    //Implemented only to avoid errors.
+    //Just like a Java interface method.
+}
+
+template <class Type>
+int DoublyLinkedList<Type> :: getSize() const
 {
     return this->size;
 }
 
 template <class Type>
-BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getFront()
+BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getFront() const
 {
     return this->front;
 }
 
 template <class Type>
-BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getEnd()
+BiDirectionalNode<Type> * DoublyLinkedList<Type> :: getEnd() const
 {
     return this->end;
 }
-#endif /* DoublyLinkedList_hpp */
+
+template <class Type>
+void DoublyLinkedList<Type> :: setSize(int size)
+{
+    this->size = size;
+}
+
+template <class Type>
+void DoublyLinkedList<Type> :: setFront(BiDirectionalNode<Type> * front)
+{
+    this->front = front;
+}
+
+template <class Type>
+void DoublyLinkedList<Type> :: setEnd(BiDirectionalNode<Type> * end)
+{
+    this->end = end;
+}
+#endif /* DoublyLinkedList_h */
+
+

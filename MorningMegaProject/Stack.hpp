@@ -34,29 +34,28 @@ void Stack<Type> :: add(Type valueToAdd)
     push(valueToAdd);
 }
 
-/* 
-Push adds the supplied object to the end of the stack.
-Set new object to point to end
-Increases the size by 1.
-Adjusts the end pointer to reflect the new end of the stack.
-
-*/
+/*
+ Adds the supplied object to the stack to the end.
+ Set new object to point to end.
+ 
+ Adjusts the end pointer to reflect the new end of the stack.
+ Increases the size by 1.
+ */
 template <class Type>
-void Stack<Type> :: push(Type valueToPush)
+void Stack<Type> :: push(Type addedThing)
 {
-    BiDirectionalNode<Type> * newNode = new BiDirectionalNode(valueToPush);
-    if(this->size == 0 || this->front == nullptr || this->end == nullptr)
+    BiDirectionalNode<Type> * addToStack = new BiDirectionalNode<Type>(addedThing);
+    
+    if(this->getSize() == 0 || this->getFront() == nullptr || this->getEnd() == nullptr)
     {
-        this->front = newNode;
+        this->setFront(addToStack);
     }
     else
     {
-        this->end->setNextPointer(newNode);
-        newNode->setPreviousPointer(this->end);
+        this->getEnd()->setNextPointer(addToStack);
+        addToStack->setPreviousPointer(this->getEnd());
     }
-
-    this->end = newNode;
-    this->size++;
+    this->setEnd(addToStack);
+    this->setSize(this->getSize() + 1);
 }
-
 #endif /* Stack_hpp */
