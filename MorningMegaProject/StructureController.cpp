@@ -6,10 +6,9 @@
 //  Copyright © 2017 CTEC. All rights reserved.
 //
 
-#include "IntNodeArray.hpp"
-#include "StructureController.hpp"
-#include "Timer.hpp"
 #include <iostream>
+#include "StructureController.hpp"
+#include <string>
 
 using namespace std;
 
@@ -18,6 +17,7 @@ StructureController :: StructureController()
     wordNode = Node<string>();
     numberNode = Node<int>();
     numberArray = Array<int>(1);
+    memeQueue = Queue<Meme>();
 }
 
 void StructureController :: testArrayTemplate()
@@ -48,7 +48,9 @@ void StructureController :: start()
 {
     //testArrayTemplate();
     //testAdvancedFeatures();
-    testListIntro();
+    //testListIntro();
+    testMemeQueue();
+    testNumberStack();
 }
 
 void StructureController :: testAdvancedFeatures()
@@ -130,3 +132,51 @@ void StructureController :: testListIntro()
 //            
 //                }
 
+void StructureController :: testMemeQueue()
+{
+    cout << "!!! START!!!:  testMemeQueue()" << endl;
+    Queue<Meme> memeQueue;
+    
+    Meme firstMeme("toddler fist with pinwheel!");
+    Meme secondMeme;
+    Meme thirdMeme;
+    secondMeme.setDankness(8435);
+    thirdMeme.setHipsterQuotient(2.893);
+    
+    memeQueue.add(firstMeme);
+    memeQueue.enqueue(secondMeme);
+    
+    cout << "EXPECTED SIZE: 2 ACTUAL:  " << memeQueue.getSize() <<endl;
+    
+    //Meme temp = memeQueue.dequeue();
+    cout << "EXPECTED PEEK RESULT: toddler fist.... IS: " << memeQueue.peek().getTitle() << endl;
+
+    Meme toDequeue = memeQueue.dequeue();
+    
+    cout << "EXPECTED RESULT OF DEQUEUE: SIZE=1 IS: " << memeQueue.getSize() << endl;
+    cout << "EXPECTED RESULT OF DEQUEUE: title=toddler first  IS: " << toDequeue.getTitle() << endl;
+    
+    Meme toRemove = memeQueue.remove(0);
+    
+    cout << "EXPECTED RESULT OF REMOVE: SIZE=0 IS: " << memeQueue.getSize() << endl;
+    cout << "EXPECTED RESULT OF REMOVE: title=normie...  IS: " << toRemove.getTitle() << endl;
+
+    cout << "!!! END !!!:  testMemeQueue()" << endl;
+}
+
+void StructureController :: testNumberStack()
+{
+    cout << "!!! START!!!:  testNumberStack()" << endl;
+    Stack<int> numberStack;
+    
+    numberStack.push(1);
+    int first = numberStack.peek();
+    cout << "EXPECTED PEEK: 1 ACTUAL: " << first << endl;
+    numberStack.add(2);
+    cout << "EXPECTED SIZE AFTER ADD: 2, ACTUAL: " << numberStack.getSize() << endl;
+
+    cout << "EXPECTED VAL OF POP: 2 ACTUAL: " << numberStack.pop() << endl;
+    cout << "EXPECTED VAL OF REMOVE: 1 ACTUAL: " << numberStack.remove(0) << endl;
+
+    cout << "!!! END !!!:  testNumberStack()" << endl;
+}

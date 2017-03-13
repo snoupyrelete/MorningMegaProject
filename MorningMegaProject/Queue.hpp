@@ -17,12 +17,12 @@ class Queue : public DoublyLinkedList<Type>
 private:
 public:
     Queue();
-    ~Queue(0);
+    ~Queue();
     void add(Type data);
     Type remove(int index);
     Type peek();
     Type dequeue();
-    void enqueue(Type data);
+    void enqueue(Type value);
 };
 
 template <class Type>
@@ -53,7 +53,7 @@ Queue<Type> :: ~Queue()
  (Have to implement all virtual methods)
  */
 template <class Type>
-Type Queue<Type> :: add(Type value)
+void Queue<Type> :: add(Type  value)
 {
     enqueue(value);
 }
@@ -66,11 +66,11 @@ Type Queue<Type> :: add(Type value)
  5. Adjust size
  */
 template <class Type>
-Type Queue<Type> :: enqueue(Type instertedValue)
+void Queue<Type> :: enqueue(Type  insertedValue)
 {
-    BiDirectionalNode<Type> * added = new BiDirectionalNode<Type>();
+    BiDirectionalNode<Type> * added = new BiDirectionalNode<Type>(insertedValue);
     
-    if(this->getSize() == 0 || this->getfront() == nullptr || this->getEnd() == nullptr)
+    if(this->getSize() == 0 || this->getFront() == nullptr || this->getEnd() == nullptr)
     {
         this->setFront(added);
     }
@@ -92,7 +92,7 @@ Type Queue<Type> :: enqueue(Type instertedValue)
 template <class Type>
 Type Queue<Type> :: remove(int index)
 {
-    assert(index  == 0 && this->getSize() > 0)
+    assert(index  == 0 && this->getSize() > 0);
     return dequeue();
 }
 
@@ -119,13 +119,14 @@ Type Queue<Type> :: dequeue()
     {
         this->setEnd(nullptr);
         this->setFront(nullptr);
+       
     }
     // 4
     else
     {
         this->setFront(removeMe->getNextPointer());
+        this->getFront()->setPreviousPointer(nullptr);
     }
-    this->setFront()->setPreviousPointer(nullptr);
     // 5
     delete removeMe;
     //6

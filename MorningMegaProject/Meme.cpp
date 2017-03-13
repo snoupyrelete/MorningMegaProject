@@ -24,6 +24,11 @@ Meme :: Meme(string title)
     this->mainstream = true;
 }
 
+/*
+ 
+GETTERS
+ 
+*/
 int Meme :: getDankness()
 {
     return this->dankness;
@@ -45,6 +50,11 @@ string Meme :: getTitle()
     return this->title;
 }
 
+/*
+ 
+SETTERS
+ 
+*/
 void Meme :: setDankness(int dankness)
 {
     this->dankness  = dankness;

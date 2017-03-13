@@ -82,16 +82,16 @@ void Stack<Type> :: push(Type addedThing)
 template <class Type>
 Type Stack<Type> :: remove(int index)
 {
-    assert(index == this->getSize(0 -1 && this->getSize() > 0);
-    return pop;
+    assert(index == this->getSize() -1 && this->getSize() > 0);
+    return pop();
 }
-#endif /* Stack_hpp */
+
 
 template <class Type>
 Type Stack<Type> :: pop()
 {
     assert(this->getSize() > 0);
-    Type removed = this->getEnd->getNodeData();
+    Type removed = this->getEnd()->getNodeData();
     
     BiDirectionalNode<Type> * update = this->getEnd();
     update = update->getPreviousPointer();
@@ -108,3 +108,12 @@ Type Stack<Type> :: pop()
     
     return removed;
 }
+
+template <class Type>
+Type Stack<Type> :: peek()
+{
+    assert(this->getSize() >0);
+    return this->getEnd()->getNodeData();
+}
+
+#endif /* Stack_hpp */

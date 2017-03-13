@@ -12,7 +12,11 @@
 #include "Array.hpp"
 #include "Node.hpp"
 #include "List.hpp"
-
+#include "Meme.hpp"
+#include "Queue.hpp"
+#include "IntNodeArray.hpp"
+#include "Stack.hpp"
+#include "Timer.hpp"
 #include <string>
 
 class StructureController
@@ -21,6 +25,8 @@ private:
     Node<int> numberNode;
     Node<std::string> wordNode;
     Array<int> numberArray;
+    Queue<Meme> memeQueue;
+    Stack<int> numberStack;
     
     
     
@@ -30,6 +36,9 @@ private:
     void testAdvancedFeatures();
     void testListIntro();
     void testListTiming();
+    
+    void testMemeQueue();
+    void testNumberStack();
 public:
     StructureController();
     void start();

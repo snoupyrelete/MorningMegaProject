@@ -8,6 +8,7 @@
 
 #ifndef BiDirectionalNode_hpp
 #define BiDirectionalNode_hpp
+#include "Node.hpp"
 
 template <class Type>
 class BiDirectionalNode : public Node<Type>
@@ -31,21 +32,21 @@ public:
 };
 
 template <class Type>
-BiDirectionalNode :: BiDirectionalNode() : Node<Type>()
+BiDirectionalNode<Type> :: BiDirectionalNode() : Node<Type>()
 {
     this->nextPointer = nullptr;
     this->previousPointer = nullptr;
 }
 
 template <class Type>
-BiDirectionalNode<Type> :: BiDirectionalNode(Type data) : Node(data)
+BiDirectionalNode<Type> :: BiDirectionalNode(Type data) : Node<Type>(data)
 {
     this->nextPointer = nullptr;
     this->previousPointer = nullptr;
 }
 
 template <class Type>
-BiDirectionalNode<Type> :: BiDirectionalNode(Type data, BiDirectionalNode<Type> * previous, BiDirectionalNode<Type> * next) : Node(data, next)
+BiDirectionalNode<Type> :: BiDirectionalNode(Type data, BiDirectionalNode<Type> * previous, BiDirectionalNode<Type> * next) : Node<Type>(data, next)
 {
     this->previousPointer = previous;
     this->nextPointer = next;
@@ -70,7 +71,7 @@ void BiDirectionalNode<Type> :: setNextPointer(BiDirectionalNode<Type> * next)
 }
 
 template <class Type>
-void BiDirectionalNode<Type> :: setNextPointer(BiDirectionalNode<Type> * previous)
+void BiDirectionalNode<Type> :: setPreviousPointer(BiDirectionalNode<Type> * previous)
 {
     this->previousPointer = previous;
 }
