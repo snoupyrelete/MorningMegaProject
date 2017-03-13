@@ -29,6 +29,7 @@ private:
     void testArrayTemplate();
     void testAdvancedFeatures();
     void testListIntro();
+    void testListTiming();
 public:
     StructureController();
     void start();
