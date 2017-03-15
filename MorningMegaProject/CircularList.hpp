@@ -52,7 +52,7 @@ BiDirectionalNode<Type> * CircularList<Type> :: findNode(int index)
         nodeToFind  = this->getFront();
         for(int spot = 0; spot < index; spot++)
         {
-            nodeToFind = removed->getNextPointer();
+            nodeToFind = nodeToFind->getNextPointer();
         }
     }
     else
