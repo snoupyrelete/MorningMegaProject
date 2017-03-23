@@ -24,6 +24,8 @@ public:
     void addAtIndex(int index, Type value);
     Type getFromIndex(int index);
     Type getFromIndexFast(int index);
+    int indexOf(Type itemToFind);
+    int nextIndexOf(Type item, int startPoint);
 };
 #endif /* DoubleList_hpp */
 
@@ -114,4 +116,52 @@ Type Double<Type> :: getFromImdexFast(int index)
     valueAtIndex = reference->getNodeData();
     return valueAtIndex;
 }
+
+// Loop over structure
+// Compare getNodeData to parameter
+// If they match, return index to count of loop
+// Elese continue
+// return invalid/not in list
+template <class Type>
+int DoubleList<Type> :: indexOf(Type findMe)
+{
+    int index = -1;
+    
+    BiDirectionalNode<Type> * current = this->getFront;
+    for (int i = 0; i < this->getSize(); i++)
+    {
+        if (current->getNodeData() == findMe)
+        {
+            return i;
+        }
+        current = current->getNextPointer();
+    }
+    return index;
+}
+
+tempalte <class Type>
+int DoubleList<Type> :: nextIndexOf(Type item, int startingPoint)
+{
+    assert(startingPoint >= 0 && startingPoint < this->getSize());
+    
+    int index = -1;
+    
+    BiDirectionalNode<Type> * current = this->getFront;
+
+    
+    for (int i = 0; i < this->getSiZe(); i++)
+    {
+        if(i >= startingPoint)
+        {
+            if(current->getNodeData() == value)
+            {
+                return i;
+            }
+        }
+        current = current->getNextPointer();
+    }
+    return index;
+}
+
+
 

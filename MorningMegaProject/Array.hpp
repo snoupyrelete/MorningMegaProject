@@ -37,6 +37,7 @@ public:
     Node<Type> * getFront() const;
     Type getFromIndex(int index);
     void setAtIndex(int index, Type value);
+    int indexOf(Type findMe);
 };
 
 
@@ -169,5 +170,23 @@ Array<Type> :: Array(const Array<Type> & toBeCopied)
         copyTemp = copyTemp->getNextPointer();
     }
 }
+
+template <class Type>
+int Array<Type> :: indexOf(Type findMe)
+{
+    int index = -1;
+    
+    Node<Type> * current = this->getFront;
+    for (int i = 0; i < this->getSize(); i++)
+    {
+        if (current->getNodeData() == findMe)
+        {
+            return i;
+        }
+        current = current->getNextPointer();
+    }
+    return index;
+}
+
 
 #endif /* Array_hpp */
