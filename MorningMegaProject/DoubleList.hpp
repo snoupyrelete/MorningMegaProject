@@ -38,7 +38,12 @@ DoubleList<Type> :: ~DoubleList()
 {
     
 }
-
+/*
+ You add a node and set the current end's next pointeer to the added node,
+ then you set the added's previous to the old end,
+ then you point the end pointer to the node you added - which is now set as the end
+ then you increase size++
+*/
 template <class Type>
 void DubleList<Type> :: add(Type value)
 {
@@ -49,9 +54,12 @@ void DubleList<Type> :: add(Type value)
     }
     else
     {
+        // Sets the ends next pointer to added
+        // Then sets added's previous pointer to the old end
         this->getEnd()->setNextPointer(addedNode);
         addedNode->setPreviousPointer(this->getEnd());
     }
+    // Then makes the added the new end!
     this->setEnd(addeddNode);
     this->setSize(this->getSize() + 1);
 }
@@ -65,17 +73,18 @@ Type DoubleList<Type> :: remove(int index)
     {
         nodeToTakeOut = nodeToTakeOut->getNextPointer();
     }
-    derp= nodeToTakeOut->getNodeData();
+    derp = nodeToTakeOut->getNodeData();
     
     BiDirectionalNode<Type> * prev = nodeToTakeOut->getPrevious();
     BiDirectionalNode<Type> * next = nodeToTakeOut->getNextPointer();
     
+    // Reconnect these by setting their next/prev to what was nodeToTakeOut's next/prev - fill the gap
     prev->setNextPointer(next);
-    next->seetPreviousPointer(previous);
+    next->setPreviousPointer(previous);
     
     delete nodeToTakeOut;
     
-    this->setSize(this->getSize() -1);
+    this->setSize(this->getSize() - 1);
     return derp;
 }
 

@@ -76,6 +76,7 @@ void Queue<Type> :: enqueue(Type  insertedValue)
     }
     else
     {
+        // ???
         this->getEnd()->setNextPointer(added);
         added->setPreviousPointer(this->getEnd());
     }
@@ -119,7 +120,6 @@ Type Queue<Type> :: dequeue()
     {
         this->setEnd(nullptr);
         this->setFront(nullptr);
-       
     }
     // 4
     else
