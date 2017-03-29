@@ -13,5 +13,7 @@ int main()
     StructureController * app = new StructureController();
     app->start();
     
+//    FileController * a = new FileController();
+//    a->readMemeDataFromFileAsList
     return 0;
 }
