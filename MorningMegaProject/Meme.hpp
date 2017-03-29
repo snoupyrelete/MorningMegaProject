@@ -32,6 +32,12 @@ public:
     void setHipsterQuotient(double quotient);
     void setMainstream(bool mainstream);
     void setTitle(string title);
+    
+    // Operator overloads
+    bool operator < (Meme & compared);
+    bool operator > (Meme & compared);
+    bool operator == (Meme & compared);
+    
 };
 
 #endif /* Meme_hpp */

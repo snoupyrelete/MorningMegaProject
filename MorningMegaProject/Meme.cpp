@@ -24,6 +24,30 @@ Meme :: Meme(string title)
     this->mainstream = true;
 }
 
+bool Meme :: operator < (Meme & comparedMeme)
+{
+    if(this->isMainstream() && comparedMeme.isMainstream())
+    {
+        if(this->getDankness() < comparedMeme.getDankness())
+        {
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+
+//bool Meme :: operator > (Meme & comparedMeme)
+//{
+//    
+//}
+//
+//bool Meme :: operator == (Meme & comparedMeme)
+//{
+//    
+//}
+
+
 /*
  
 GETTERS

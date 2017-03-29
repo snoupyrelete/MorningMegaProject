@@ -41,7 +41,7 @@ DoubleList<Type> :: ~DoubleList()
     
 }
 /*
- You add a node and set the current end's next pointeer to the added node,
+ You add a node and set the current end's next pointer to the added node,
  then you set the added's previous to the old end,
  then you point the end pointer to the node you added - which is now set as the end
  then you increase size++
@@ -91,7 +91,7 @@ Type DoubleList<Type> :: remove(int index)
 }
 
 template <class Type>
-Type Double<Type> :: getFromImdexFast(int index)
+Type Double<Type> :: getFromIndexFast(int index)
 {
     assert(index >= 0 && index < this->getSize());
     Type valueAtIndex;
@@ -108,7 +108,7 @@ Type Double<Type> :: getFromImdexFast(int index)
             reference = this->getEnd();
             for(int position = this->getsize() - 1; position > index; position--)
             {
-                reference = refeerence->getPreviousPointer();
+                reference = reference->getPreviousPointer();
             }
         }
         
@@ -162,6 +162,3 @@ int DoubleList<Type> :: nextIndexOf(Type item, int startingPoint)
     }
     return index;
 }
-
-
-
