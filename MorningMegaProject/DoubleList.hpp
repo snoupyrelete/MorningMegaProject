@@ -47,7 +47,7 @@ DoubleList<Type> :: ~DoubleList()
  then you increase size++
 */
 template <class Type>
-void DubleList<Type> :: add(Type value)
+void DoubleList<Type> :: add(Type value)
 {
     BiDirectionalNode<Type> * addedNode = new BiDirectionalNode<Type>(value);
     if(this->getSize() == 0)
@@ -62,7 +62,7 @@ void DubleList<Type> :: add(Type value)
         addedNode->setPreviousPointer(this->getEnd());
     }
     // Then makes the added the new end!
-    this->setEnd(addeddNode);
+    this->setEnd(addedNode);
     this->setSize(this->getSize() + 1);
 }
 
@@ -91,7 +91,7 @@ Type DoubleList<Type> :: remove(int index)
 }
 
 template <class Type>
-Type Double<Type> :: getFromIndexFast(int index)
+Type DoubleList<Type> :: getFromIndexFast(int index)
 {
     assert(index >= 0 && index < this->getSize());
     Type valueAtIndex;
@@ -139,7 +139,7 @@ int DoubleList<Type> :: indexOf(Type findMe)
     return index;
 }
 
-tempalte <class Type>
+template <class Type>
 int DoubleList<Type> :: nextIndexOf(Type item, int startingPoint)
 {
     assert(startingPoint >= 0 && startingPoint < this->getSize());
