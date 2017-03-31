@@ -77,12 +77,12 @@ Type DoubleList<Type> :: remove(int index)
     }
     derp = nodeToTakeOut->getNodeData();
     
-    BiDirectionalNode<Type> * prev = nodeToTakeOut->getPrevious();
+    BiDirectionalNode<Type> * prev = nodeToTakeOut->getPreviousPointer();
     BiDirectionalNode<Type> * next = nodeToTakeOut->getNextPointer();
     
     // Reconnect these by setting their next/prev to what was nodeToTakeOut's next/prev - fill the gap
     prev->setNextPointer(next);
-    next->setPreviousPointer(previous);
+    next->setPreviousPointer(prev);
     
     delete nodeToTakeOut;
     
@@ -103,15 +103,14 @@ Type DoubleList<Type> :: getFromIndexFast(int index)
         {
             reference = reference->getNextPointer();
         }
-        else
+    }
+    else
+    {
+        reference = this->getEnd();
+        for(int position = this->getsize() - 1; position > index; position--)
         {
-            reference = this->getEnd();
-            for(int position = this->getsize() - 1; position > index; position--)
-            {
-                reference = reference->getPreviousPointer();
-            }
+            reference = reference->getPreviousPointer();
         }
-        
     }
     valueAtIndex = reference->getNodeData();
     return valueAtIndex;
@@ -140,7 +139,7 @@ int DoubleList<Type> :: indexOf(Type findMe)
 }
 
 template <class Type>
-int DoubleList<Type> :: nextIndexOf(Type item, int startingPoint)
+int DoubleList<Type> :: nextIndexOf(Type value, int startingPoint)
 {
     assert(startingPoint >= 0 && startingPoint < this->getSize());
     
