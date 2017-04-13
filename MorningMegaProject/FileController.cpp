@@ -80,7 +80,7 @@ void FileController :: writeMemeDataStatistics(DoubleList<Meme> dataSource, stri
         
         for(int index = 0; index < dataSource.getSize(); index++)
         {
-            saveFile  << "Meme Title: " << dataSource.getFromIndex(index).getTitle() << endl;
+            //saveFile  << "Meme Title: " << dataSource.getFromIndex(index).getTitle() << endl;
         }
     }
     else

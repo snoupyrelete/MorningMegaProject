@@ -17,6 +17,8 @@ private:
     BinarySearchTreeNode<Type> * root;
     BinarySearchTreeNode<Type> * leftChild;
     BinarySearchTreeNode<Type> * rightChild;
+    
+
 public:
     BinarySearchTreeNode<Type>();
     BinarySearchTreeNode(Type data)
