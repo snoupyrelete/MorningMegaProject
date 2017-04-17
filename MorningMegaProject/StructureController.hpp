@@ -17,6 +17,7 @@
 #include "IntNodeArray.hpp"
 #include "Stack.hpp"
 #include "Timer.hpp"
+#include "BinarySearchTree.hpp"
 #include <string>
 
 class StructureController
@@ -39,6 +40,7 @@ private:
     
     void testMemeQueue();
     void testNumberStack();
+    void testBinarySearchTreeOperations();
 public:
     StructureController();
     void start();
