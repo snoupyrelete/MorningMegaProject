@@ -45,7 +45,7 @@ public:
     int getSize();
     int getHeight();
     bool isBalanced();
-    bool isComplete();
+    bool isComplete(BinarySearchTreeNode<Type> * start, int index, int size);
     
     bool contains(Type value);
     void insert(Type itemToInsert);
@@ -97,7 +97,10 @@ void BinarySearchTree<Type> :: postOrderTraversal()
 template <class Type>
 bool BinarySearchTree<Type> :: isComplete(BinarySearchTreeNode<Type> * start)
 {
-    return false;
+    int index = 0;
+    int size = getSize();
+    
+    return isComplete(root, index, size);
 }
 
 template <class Type>
@@ -420,9 +423,22 @@ bool BinarySearchTree<Type> :: isBalanced()
 }
 
 template <class Type>
-bool BinarySearchTree<Type> :: isComplete()
+bool BinarySearchTree<Type> :: isComplete(BinarySearchTreeNode<Type> * start, int index, int size)
 {
-    return isComplete(root);
+    int leftHeight = 0;
+    int rightHeight = 0;
+    
+    if(start == nullptr)
+    {
+        return true;
+    }
+    
+    if(index >= size)
+    {
+        return false;
+    }
+    
+    return isComplete(start->getLeftChildPointer(), 2 * index + 1,size) && isComplete(start->getRightChildPointer(), 2 * index + 2, size);
 }
 
 #endif /* BinarySearchTree_hpp */
