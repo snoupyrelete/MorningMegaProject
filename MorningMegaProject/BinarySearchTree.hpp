@@ -29,6 +29,10 @@ protected:
     void preOrderTraversal(BinarySearchTreeNode<Type> * preStart);
     void postOrderTraversal(BinarySearchTreeNode<Type> * postStart);
     
+    BinarySearchTreeNode<Type> * getRightMostChild(BinarySearchTreeNode<Type> * current);
+    BinarySearchTreeNode<Type> * getLeftMostChild(BinarySearchTreeNode<Type> * current);
+
+    
     void removeNode(BinarySearchTreeNode<Type> * removeMe);
     
 public:
@@ -37,6 +41,9 @@ public:
     
     BinarySearchTreeNode<Type> * getRoot();
     void setRoot(BinarySearchTreeNode<Type> * root);
+    
+    Type findMinimum();
+    Type findMaximum();
     
     void inOrderTraversal();
     void preOrderTraversal();
@@ -190,6 +197,44 @@ void BinarySearchTree<Type> :: postOrderTraversal(BinarySearchTreeNode<Type> * p
         postOrderTraversal(postStart->getRightChildPointer());
         cout << "Node Contents: " << postStart->getNodeData() << endl;
     }
+}
+
+template <class Type>
+BinarySearchTreeNode<Type> * BinarySearchTree<Type> :: getLeftMostChild(BinarySearchTreeNode<Type> * current)
+{
+    BinarySearchTreeNode<Type> * temp = current;
+    while(temp->getLeftChild() != nullptr)
+    {
+        temp = temp->getLeftChild();
+    }
+    return temp;
+}
+
+template <class Type>
+BinarySearchTreeNode<Type> * BinarySearchTree<Type> :: getRightMostChild(BinarySearchTreeNode<Type> * current)
+{
+    BinarySearchTreeNode<Type> * temp = current;
+    while(temp->getRightChild() != nullptr)
+    {
+        temp = temp->getRightChild();
+    }
+    return temp;
+}
+
+template <class Type>
+Type BinarySearchTree<Type> :: findMinimum()
+{
+    assert(root != nullptr);
+    BinarySearchTreeNode<Type> * smallest = getLeftMostChild(root);
+    return smallest->getNodeData();
+}
+
+template <class Type>
+Type BinarySearchTree<Type> :: findMaximum()
+{
+    assert(root != nullptr);
+    BinarySearchTreeNode<Type> * largest = getRightMostChild(root);
+    return largest->getNodeData();
 }
 
 template <class Type>

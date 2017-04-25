@@ -16,6 +16,9 @@
 #include <fstream> // File operations
 #include <iostream> // Console access
 #include <sstream> // String as stream
+#include "BinarySearchTree.hpp"
+#include "AVLTree.hpp"
+#include "CrimeData.hpp"
 
 using namespace std;
 
@@ -26,6 +29,8 @@ private:
 public:
     DoubleList<Meme> readMemeDataFromFileAsList(string filename);
     void writeMemeDataStatistics(DoubleList<Meme> source, string filename);
+    BinarySearchTree<CrimeData> readCrimeDataToBinarySearchTree(string filename);
+    AVLTree<CrimeData> readCrimeDataToAVLTree(string filename);
 };
 
 #endif /* FileController_hpp */

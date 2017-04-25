@@ -19,6 +19,9 @@
 #include "Timer.hpp"
 #include "BinarySearchTree.hpp"
 #include <string>
+#include "CrimeData.hpp"
+#include "AvlTree.hpp"
+#include "FileController.hpp"
 
 class StructureController
 {
@@ -41,6 +44,9 @@ private:
     void testMemeQueue();
     void testNumberStack();
     void testBinarySearchTreeOperations();
+    void testBinarySearchData();
+    void testAVLTreeOperations();
+    void testAVLData();
 public:
     StructureController();
     void start();
