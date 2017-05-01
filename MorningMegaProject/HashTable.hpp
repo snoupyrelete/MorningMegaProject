@@ -20,8 +20,7 @@ private:
     long capacity;
     long size;
     double efficiencyPercentage;
-    // Array of pointers
-    Type * * hashTableStorage;
+    HashNode<Type> * * hashTableStorage;
     bool isPrime(long sampleNumber);
     void resize();
     long nextPrime(long current);
@@ -29,10 +28,26 @@ private:
     long handleCollision(Type data, long currentPosition);
 public:
     HashTable();
+    ~HashTable();
     void add(Type data);
     bool remove(Type data);
     void displayContents();
 };
+
+template <class Type>
+HashTable<Type> :: HashTable()
+{
+    this->capacity = 101;
+    this->efficiencyPercentage = .667;
+    this->size = 0;
+    this->hashTableStorage = HashNode<Type> * [capacity];
+}
+
+template <class Type>
+HashTable<Type> :: ~HashTable()
+{
+    delete [] hashTableStorage;
+}
 
 template <class Type>
 bool HashTable<Type> :: isPrime(long sampleNumber)
@@ -62,8 +77,17 @@ bool HashTable<Type> :: isPrime(long sampleNumber)
     }
 }
 
-//template <class Type>
-//long HashTable<Type> :: nextPrime(long current)
-//{ }
+template <class Type>
+long HashTable<Type> :: nextPrime(long current)
+{
+    int nextPrime = (this->capacity * 2) + 1;
+    
+    while(!isPrime(nextPrime))
+    {
+        nextPrime++;
+    }
+    
+    return nextPrime;
+}
 
 #endif /* HashTable_hpp */
