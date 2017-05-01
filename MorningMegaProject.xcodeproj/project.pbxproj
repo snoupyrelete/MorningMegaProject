@@ -55,6 +55,7 @@
 		2DC99E741E69C8FF00A4AE49 /* Queue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 		2DC99E771E69C91000A4AE49 /* CircularList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CircularList.hpp; sourceTree = "<group>"; };
 		2DC99E7C1E69C93D00A4AE49 /* DoubleList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DoubleList.hpp; sourceTree = "<group>"; };
+		2DCFF4471EB77A24008D28F3 /* HashTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HashTable.hpp; sourceTree = "<group>"; };
 		2DDE3ACF1E54A190002B7B00 /* Node.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		2DDE3AD21E54AAC9002B7B00 /* Array.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Array.hpp; sourceTree = "<group>"; };
 		2DDE3AD41E54B235002B7B00 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				2DB073081E9D253F00EC0A54 /* Tree.hpp */,
 				2DB0730B1E9D29F800EC0A54 /* BinarySearchTree.hpp */,
 				2D31B7891EA7B14B00640F9D /* AVLTree.hpp */,
+				2DCFF4471EB77A24008D28F3 /* HashTable.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";

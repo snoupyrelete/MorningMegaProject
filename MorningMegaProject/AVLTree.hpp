@@ -140,7 +140,7 @@ BinarySearchTreeNode<Type> * AVLTree<Type> :: insertNode(BinarySearchTreeNode<Ty
     }
     else if(inserted < parent->getNodeData())
     {
-        parent->setLeftChild(insertNode(parent->getRightChild(), inserted));
+        parent->setLeftChildPointer(insertNode(parent->getRightChildPointer(), inserted));
         parent = balanceSubTree(parent);
     }
     return parent;
