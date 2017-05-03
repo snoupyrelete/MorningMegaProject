@@ -13,6 +13,7 @@
 #include <assert.h>
 
 using namespace std;
+
 template <class Type>
 class HashTable
 {
@@ -80,11 +81,11 @@ bool HashTable<Type> :: isPrime(long sampleNumber)
 template <class Type>
 long HashTable<Type> :: nextPrime(long current)
 {
-    int nextPrime = (this->capacity * 2) + 1;
+    long nextPrime = (this->capacity * 2) + 1;
     
     while(!isPrime(nextPrime))
     {
-        nextPrime++;
+        nextPrime += 2;
     }
     
     return nextPrime;
@@ -117,5 +118,100 @@ long HashTable<Type> :: handleCollision(HashNode<Type> * data, long currentPosit
     return -1;
 }
 
+template <class Type>
+bool HashTable<Type> :: remove(Type data)
+{
+    bool removed = false;
+    /* This is the improper way, because it makes it a time of O(n), as opposed to O(1) below
+     
+    for(long index = 0; index < capacity; index++)
+    {
+        if(hashTableStorage[index] != nullptr && hashTableStorage[index]->getData() == data)
+        {
+            hashTableStorage[index] = nullptr;
+            removed = true;
+        }
+    } */
+    
+    HashNode<Type> * find = new HashNode<Type>(data);
+    long hashIndex = findPosition(find);
+    if(hashTableStorage[hashIndex] != nullptr)
+    {
+        hashTableStorage[hashIndex] = nullptr;
+        removed = true;
+    }
+    
+    this->size--;
+    return removed;
+}
+
+template <class Type>
+void HashTable<Type> :: displayContents()
+{
+    for(long index = 0; index < capacity; index++)
+    {
+        if(hashTableStorage[index] != nullptr)
+        {
+            cout << index << ": " << hashTableStorage[index]->getData() << endl;
+        }
+    }
+}
+
+template <class Type>
+void HashTable<Type> :: resize()
+{
+    long updatedCapacity = nextPrime();
+    HashNode<Type> * * tempStorage = new HashNode<Type> * [updatedCapacity];
+    
+    std :: fill_n(tempStorage, updatedCapacity, nullptr);
+    
+    long oldCapacity = this->capacity;
+    this->capacity = updatedCapacity;
+    
+    for(long indexx = 0; index < oldCapacity; index++ )
+    {
+        if(hashTableStorage[index] != nullptr)
+        {
+            // Refind position, because capacity is increased, so findPosition recalculates with "% capacity"
+            HashNode<Type> * temp = hashTableStorage[index];
+            long position = findPosition(temp);
+            
+            if(tempStorage[position] == nullptr)
+            {
+                tempStorage[position] = temp;
+            }
+            else
+            {
+                long updatedPosition = handleCollision(temp, position);
+                tempStorage[updatedPosition] = temp;
+            }
+        }
+    }
+    hashTableStorage = tempStorage;
+}
+
+template <class Type>
+void HashTable<Type> :: add(Type data)
+{
+    this->size++;
+    if(((this->size * 1.000)/(this->capacity)) > this->efficiencyPercentage)
+    {
+        resize();
+    }
+    
+    HashNode<Type> * temp = hashTableStorage<Type>(data);
+    long index = findPosition(temp);
+
+    // Same block of code from resize()
+    if(tempStorage[index] == nullptr)
+    {
+        tempStorage[index] = temp;
+    }
+    else
+    {
+        long updatedPosition = handleCollision(temp, index);
+        tempStorage[updatedPosition] = temp;
+    }
+}
 
 #endif /* HashTable_hpp */
