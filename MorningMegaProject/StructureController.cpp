@@ -18,6 +18,38 @@ StructureController :: StructureController()
     numberNode = Node<int>();
     numberArray = Array<int>(1);
     memeQueue = Queue<Meme>();
+    stringGraph = Graph<string>();
+}
+
+void StructureController :: testGraph()
+{
+    stringGraph.addVertex("Dylan");
+    stringGraph.addVertex("Macie");
+    stringGraph.addVertex("Maya");
+    stringGraph.addVertex("Torri");
+    stringGraph.addVertex("Kevin");
+    
+    // Kevin (dad)
+    stringGraph.addEdge(4, 0);
+    stringGraph.addEdge(4, 1);
+    stringGraph.addEdge(4, 2);
+    
+    // Torri (mom)
+    stringGraph.addEdge(3, 0);
+    stringGraph.addEdge(3, 1);
+    stringGraph.addEdge(3, 2);
+
+
+    
+    
+    cout << "Depth First: " <<  endl;
+    stringGraph.depthFirstTraversal(stringGraph, 0);
+
+    cout << "Breadth First: " << endl;
+    stringGraph.breadthFirstTraversal(stringGraph, 0);
+
+    
+
 }
 
 void StructureController :: testArrayTemplate()
@@ -29,6 +61,8 @@ void StructureController :: testArrayTemplate()
 
 void StructureController :: testNodeTypes()
 {
+
+
     
 }
 
@@ -51,7 +85,8 @@ void StructureController :: start()
     //testListIntro();
 //    testMemeQueue();
 //    testNumberStack();
-    testBinarySearchTreeOperations();
+    //testBinarySearchTreeOperations();
+    testGraph();
 }
 
 void StructureController :: testAdvancedFeatures()
@@ -182,8 +217,9 @@ void StructureController :: testNumberStack()
     cout << "!!! END !!!:  testNumberStack()" << endl;
 }
 
+
+
 //void StructureController :: testBinarySearchTreeOperations()
-//
 //{
 //    
 //    //BinarySearchTree<int> numbers;
@@ -222,109 +258,109 @@ void StructureController :: testNumberStack()
 //    
 //}
 
-void StructureController :: testBinarySearchData()
-
-{
-    
-    FileController fileData;
-    
-    Timer treeTimer;
-    
-    treeTimer.startTimer();
-    
-    BinarySearchTree<CrimeData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/cody.henrichsen/Documents/crimes.csv");
-    
-    treeTimer.stopTimer();
-    
-    
-    
-    int count = crimeTree.getSize();
-    
-    int height = crimeTree.getHeight();
-    
-    bool complete = crimeTree.isComplete();
-    
-    bool balanced = crimeTree.isBalanced();
-    
-    
-    
-    cout << "The count of the tree is: " << count << ", the height is " << height << ".\n The tree's balanced status is " << balanced << ", and its complete status is " << complete << endl;
-    
-    cout << "The time to read in the tree was: " << endl;
-    
-    treeTimer.displayTimerInformation();
-}
-
-void StructureController :: testAVLTreeOperations()
-
-{
-    
-    AVLTree<int> numbers;
-    
-    numbers.insert(9843);
-    
-    numbers.insert(10);
-    
-    numbers.insert(43);
-    
-    numbers.insert(-123);
-    
-    numbers.insert(23465);
-    
-    numbers.insert(10); // won't go in
-    
-    numbers.insert(43243);
-    
-    numbers.insert(-45677654);
-    
-    numbers.insert(92165);
-    
-    
-    
-    cout << "Size should be 8 and is: " << numbers.getSize() << endl;
-    
-    cout << "In order traversal should be: \n\t-45677654 \n\t-123 \n\t10 \n\t43 \n\t9843 \n\t23465 \n\t43243 \n\t92165" << endl;
-    
-    numbers.inOrderTraversal();
-    
-    
-    
-    cout << "Height should be 4 and is: " << numbers.getHeight() << endl;
-    
-    cout << "Balanced should be true || 1 and is: " << numbers.isBalanced() << endl;
-    
-}
-
-void StructureController :: testAVLData()
-
-{
-    
-    FileController fileData;
-    
-    Timer treeTimer;
-    
-    treeTimer.startTimer();
-    
-    AVLTree<CrimeData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
-    
-    treeTimer.stopTimer();
-    
-    
-    
-    int count = crimeTree.getSize();
-    
-    int height = crimeTree.getHeight();
-    
-    bool complete = crimeTree.isComplete();
-    
-    bool balanced = crimeTree.isBalanced();
-    
-    
-    
-    cout << "The count of the tree is: " << count << ", the height is " << height << ".\n The tree's balanced status is " << balanced << ", and its complete status is " << complete << endl;
-    
-    cout << "The time to read in the tree was: " << endl;
-    
-    treeTimer.displayTimerInformation();
-    
-}
+//void StructureController :: testBinarySearchData()
+//
+//{
+//    
+//    FileController fileData;
+//    
+//    Timer treeTimer;
+//    
+//    treeTimer.startTimer();
+//    
+//    BinarySearchTree<CrimeData> crimeTree = fileData.readCrimeDataToBinarySearchTree("/Users/cody.henrichsen/Documents/crimes.csv");
+//    
+//    treeTimer.stopTimer();
+//    
+//    
+//    
+//    int count = crimeTree.getSize();
+//    
+//    int height = crimeTree.getHeight();
+//    
+//    bool complete = crimeTree.isComplete();
+//    
+//    bool balanced = crimeTree.isBalanced();
+//    
+//    
+//    
+//    cout << "The count of the tree is: " << count << ", the height is " << height << ".\n The tree's balanced status is " << balanced << ", and its complete status is " << complete << endl;
+//    
+//    cout << "The time to read in the tree was: " << endl;
+//    
+//    treeTimer.displayTimerInformation();
+//}
+//
+//void StructureController :: testAVLTreeOperations()
+//
+//{
+//    
+//    AVLTree<int> numbers;
+//    
+//    numbers.insert(9843);
+//    
+//    numbers.insert(10);
+//    
+//    numbers.insert(43);
+//    
+//    numbers.insert(-123);
+//    
+//    numbers.insert(23465);
+//    
+//    numbers.insert(10); // won't go in
+//    
+//    numbers.insert(43243);
+//    
+//    numbers.insert(-45677654);
+//    
+//    numbers.insert(92165);
+//    
+//    
+//    
+//    cout << "Size should be 8 and is: " << numbers.getSize() << endl;
+//    
+//    cout << "In order traversal should be: \n\t-45677654 \n\t-123 \n\t10 \n\t43 \n\t9843 \n\t23465 \n\t43243 \n\t92165" << endl;
+//    
+//    numbers.inOrderTraversal();
+//    
+//    
+//    
+//    cout << "Height should be 4 and is: " << numbers.getHeight() << endl;
+//    
+//    cout << "Balanced should be true || 1 and is: " << numbers.isBalanced() << endl;
+//    
+//}
+//
+//void StructureController :: testAVLData()
+//
+//{
+//    
+//    FileController fileData;
+//    
+//    Timer treeTimer;
+//    
+//    treeTimer.startTimer();
+//    
+//    AVLTree<CrimeData> crimeTree = fileData.readCrimeDataToAVLTree("/Users/cody.henrichsen/Documents/crimes.csv");
+//    
+//    treeTimer.stopTimer();
+//    
+//    
+//    
+//    int count = crimeTree.getSize();
+//    
+//    int height = crimeTree.getHeight();
+//    
+//    bool complete = crimeTree.isComplete();
+//    
+//    bool balanced = crimeTree.isBalanced();
+//    
+//    
+//    
+//    cout << "The count of the tree is: " << count << ", the height is " << height << ".\n The tree's balanced status is " << balanced << ", and its complete status is " << complete << endl;
+//    
+//    cout << "The time to read in the tree was: " << endl;
+//    
+//    treeTimer.displayTimerInformation();
+//    
+//}

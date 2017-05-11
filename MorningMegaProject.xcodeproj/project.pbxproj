@@ -47,6 +47,7 @@
 		2D6C5D121E8BF15300D1AF5A /* FileController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileController.hpp; sourceTree = "<group>"; };
 		2D6C5D181E8BF6EB00D1AF5A /* CrimeData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CrimeData.cpp; path = ../../../../Downloads/CrimeData.cpp; sourceTree = "<group>"; };
 		2D6C5D1A1E8BF73700D1AF5A /* CrimeData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CrimeData.hpp; path = ../../../../Downloads/CrimeData.hpp; sourceTree = "<group>"; };
+		2DAC3EDC1EC49FFE00E45438 /* Graph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Graph.hpp; sourceTree = "<group>"; };
 		2DB073051E9D1EB600EC0A54 /* BinarySearchTreeNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinarySearchTreeNode.hpp; sourceTree = "<group>"; };
 		2DB073081E9D253F00EC0A54 /* Tree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
 		2DB0730B1E9D29F800EC0A54 /* BinarySearchTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BinarySearchTree.hpp; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 				2D31B7891EA7B14B00640F9D /* AVLTree.hpp */,
 				2DCFF4471EB77A24008D28F3 /* HashTable.hpp */,
 				2DCFF44A1EB7849B008D28F3 /* HashNode.hpp */,
+				2DAC3EDC1EC49FFE00E45438 /* Graph.hpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";

@@ -22,6 +22,7 @@
 #include "CrimeData.hpp"
 #include "AvlTree.hpp"
 #include "FileController.hpp"
+#include "Graph.hpp"
 
 class StructureController
 {
@@ -31,6 +32,7 @@ private:
     Array<int> numberArray;
     Queue<Meme> memeQueue;
     Stack<int> numberStack;
+    Graph<std::string> stringGraph;
     
     
     
@@ -47,6 +49,7 @@ private:
     void testBinarySearchData();
     void testAVLTreeOperations();
     void testAVLData();
+    void testGraph();
 public:
     StructureController();
     void start();
