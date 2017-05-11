@@ -11,6 +11,7 @@
 
 #include <cmath>
 #include <assert.h>
+#include "HashNode.hpp"
 
 using namespace std;
 
@@ -42,7 +43,7 @@ HashTable<Type> :: HashTable()
     this->efficiencyPercentage = .667;
     this->size = 0;
     this->hashTableStorage = new HashNode<Type> * [capacity];
-    std :: fill_n(hashTableStorage, capcity, nullptr);
+    std :: fill_n(hashTableStorage, capacity, nullptr);
 }
 
 template <class Type>
@@ -70,7 +71,7 @@ bool HashTable<Type> :: isPrime(long sampleNumber)
     {
         for(int next = 3; next <= sqrt(sampleNumber) + 1; next += 2)
         {
-            if(canidateNumber % next == 0)
+            if(sampleNumber % next == 0)
             {
                 return false;
             }
@@ -169,7 +170,7 @@ void HashTable<Type> :: resize()
     long oldCapacity = this->capacity;
     this->capacity = updatedCapacity;
     
-    for(long indexx = 0; index < oldCapacity; index++ )
+    for(long index = 0; index < oldCapacity; index++ )
     {
         if(hashTableStorage[index] != nullptr)
         {
@@ -204,14 +205,14 @@ void HashTable<Type> :: add(Type data)
     long index = findPosition(temp);
 
     // Same block of code from resize()
-    if(tempStorage[index] == nullptr)
+    if(temp[index] == nullptr)
     {
-        tempStorage[index] = temp;
+        temp[index] = temp;
     }
     else
     {
         long updatedPosition = handleCollision(temp, index);
-        tempStorage[updatedPosition] = temp;
+        temp[updatedPosition] = temp;
     }
 }
 

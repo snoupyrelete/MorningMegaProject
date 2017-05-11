@@ -21,6 +21,8 @@ StructureController :: StructureController()
     stringGraph = Graph<string>();
 }
 
+void StructureController :: testHashTable();
+
 void StructureController :: testGraph()
 {
     stringGraph.addVertex("Dylan");

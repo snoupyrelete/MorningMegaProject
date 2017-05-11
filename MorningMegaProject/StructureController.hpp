@@ -23,6 +23,7 @@
 #include "AvlTree.hpp"
 #include "FileController.hpp"
 #include "Graph.hpp"
+#include "HashTable.hpp"
 
 class StructureController
 {
@@ -33,6 +34,7 @@ private:
     Queue<Meme> memeQueue;
     Stack<int> numberStack;
     Graph<std::string> stringGraph;
+    HashTable<string> stringHashTable;
     
     
     
