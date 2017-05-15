@@ -38,6 +38,7 @@ private:
     
     
     
+    
     void testIntArray();
     void testNodeTypes();
     void testArrayTemplate();
@@ -52,6 +53,7 @@ private:
     void testAVLTreeOperations();
     void testAVLData();
     void testGraph();
+    void testHashTable();
 public:
     StructureController();
     void start();

@@ -83,6 +83,21 @@ void BinarySearchTree<Type> :: setRoot(BinarySearchTreeNode<Type> * root)
     this->root = root;
 }
 
+/*
+ TREE TRAVERSALS:
+ 
+ (a) Inorder (Left, Root, Right) : 4 2 5 1 3
+ (b) Preorder (Root, Left, Right) : 1 2 4 5 3
+ (c) Postorder (Left, Right, Root) : 4 5 2 3 1
+ 
+        1
+       / \
+      2   3
+     / \
+    4   5
+ 
+*/
+
 template <class Type>
 void BinarySearchTree<Type> :: inOrderTraversal()
 {
@@ -100,6 +115,11 @@ void BinarySearchTree<Type> :: postOrderTraversal()
 {
     postOrderTraversal(root);
 }
+
+/*
+ Complete => fiiled in fully from the left
+ Balanced => heights are within 1 of eachother, and both sides are balanced
+*/
 
 template <class Type>
 bool BinarySearchTree<Type> :: isComplete(BinarySearchTreeNode<Type> * start)

@@ -19,9 +19,22 @@ StructureController :: StructureController()
     numberArray = Array<int>(1);
     memeQueue = Queue<Meme>();
     stringGraph = Graph<string>();
+    stringHashTable = HashTable<string>();
 }
 
-void StructureController :: testHashTable();
+void StructureController :: testHashTable()
+{
+    stringHashTable.add("A");
+    stringHashTable.add("B");
+    stringHashTable.add("C");
+    stringHashTable.add("D");
+    stringHashTable.add("E");
+    stringHashTable.add("F");
+    stringHashTable.add("G");
+    stringHashTable.add("H");
+    stringHashTable.add("I");
+    stringHashTable.add("J");
+}
 
 void StructureController :: testGraph()
 {
@@ -89,6 +102,7 @@ void StructureController :: start()
 //    testNumberStack();
     //testBinarySearchTreeOperations();
     testGraph();
+    testHashTable();
 }
 
 void StructureController :: testAdvancedFeatures()
