@@ -201,18 +201,18 @@ void HashTable<Type> :: add(Type data)
         resize();
     }
     
-    HashNode<Type> * temp = hashTableStorage<Type>(data);
+    HashNode<Type> * temp = new HashNode<Type>(data);
     long index = findPosition(temp);
 
     // Same block of code from resize()
-    if(temp[index] == nullptr)
+    if(hashTableStorage[index] == nullptr)
     {
-        temp[index] = temp;
+        hashTableStorage[index] = temp;
     }
     else
     {
         long updatedPosition = handleCollision(temp, index);
-        temp[updatedPosition] = temp;
+        hashTableStorage[updatedPosition] = temp;
     }
 }
 

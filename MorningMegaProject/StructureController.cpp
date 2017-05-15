@@ -34,6 +34,9 @@ void StructureController :: testHashTable()
     stringHashTable.add("H");
     stringHashTable.add("I");
     stringHashTable.add("J");
+    
+    stringHashTable.displayContents();
+    
 }
 
 void StructureController :: testGraph()
